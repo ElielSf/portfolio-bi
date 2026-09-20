@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard'
 
 function Portfolio() {
   return (
-    <section className="bg-brand-surface text-brand-text">
+    <section id="portfolio" className="bg-brand-surface text-brand-text">
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-28">
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-12">
           <div>

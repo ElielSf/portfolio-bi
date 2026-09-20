@@ -27,7 +27,7 @@ const steps: ProcessStep[] = [
 
 function Process() {
   return (
-    <section className="bg-brand-surface text-brand-text">
+    <section id="processo" className="bg-brand-surface text-brand-text">
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-28">
         <div className="mb-10 text-center md:mb-16">
           <p
