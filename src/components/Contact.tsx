@@ -1,15 +1,4 @@
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      eventName: string,
-      parameters?: {
-        send_to?: string
-        event_callback?: () => void
-      }
-    ) => void
-  }
-}
+import { reportWhatsAppConversion } from '../utils/googleAds'
 
 function Contact() {
   const whatsappNumber = '5575933008953'
@@ -22,25 +11,9 @@ function Contact() {
   const handleWhatsAppClick = (
     event: React.MouseEvent<HTMLAnchorElement>
   ) => {
-    const url = event.currentTarget.href
-
-    if (!window.gtag) {
-      return
-    }
-
     event.preventDefault()
 
-    const redirectToWhatsApp = () => {
-      window.location.href = url
-    }
-
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-18464424633/cPSPCOniroAdELmFw-RE',
-      event_callback: redirectToWhatsApp,
-    })
-
-    // Segurança caso o callback do Google não execute
-    setTimeout(redirectToWhatsApp, 1000)
+    reportWhatsAppConversion(event.currentTarget.href)
   }
 
   return (
